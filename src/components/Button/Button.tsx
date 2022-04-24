@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import ButtonStyle from './ButtonStyle';
+import ButtonStyle from './button.styles';
 
 interface IButtonProps {
   text: string;
