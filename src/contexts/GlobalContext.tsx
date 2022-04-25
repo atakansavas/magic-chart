@@ -16,8 +16,14 @@ export const GlobalContext = React.createContext<IGlobalContextProps>({
   addEntity: () => {},
 });
 
-export const GlobalContextProvider = (props: IGlobalContextProps) => {
-  const [currentEntities, setCurrentEntities] = useState(props.entities);
+export const GlobalContextProvider = ({
+  children,
+  value = {} as IGlobalContextProps,
+}: {
+  children: React.ReactNode;
+  value?: Partial<IGlobalContextProps>;
+}) => {
+  const [currentEntities, setCurrentEntities] = useState<Entity[]>([]);
 
   //Use useCallback, add new entity to currentEntities
   const addEntity = (entity: Entity) => {
@@ -47,7 +53,7 @@ export const GlobalContextProvider = (props: IGlobalContextProps) => {
         addEntity,
       }}
     >
-      {props.children}
+      {children}
     </GlobalContext.Provider>
   );
 };
