@@ -1,4 +1,4 @@
-export interface Company {
+export interface Entity {
   id: number;
   label: string;
   x: number;
