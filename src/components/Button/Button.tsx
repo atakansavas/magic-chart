@@ -3,13 +3,13 @@ import ButtonStyle from './button.styles';
 
 interface IButtonProps {
   text: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 function Button(props: IButtonProps) {
   const { text, onClick = () => {}, ...rest } = props;
   return (
-    <ButtonStyle onClick={() => onClick()} {...rest}>
+    <ButtonStyle onClick={props.onClick} {...rest}>
       {text}
     </ButtonStyle>
   );
