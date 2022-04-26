@@ -1,8 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
 const theme: DefaultTheme = {
-  borderRadius: '80px',
-
   colors: {
     WHITE: '#fff',
     GREY_500: '#696969',

@@ -15,8 +15,8 @@ function App() {
     const newEntity = {
       id: Math.floor(Math.random() * 10000),
       label: 'New Entity',
-      x: 0,
-      y: 0,
+      x: Math.floor(Math.random() * 100),
+      y: Math.floor(Math.random() * 100),
     };
 
     addEntity(newEntity);
@@ -28,7 +28,6 @@ function App() {
         <ThemeProvider theme={theme}>
           <div>Chart</div>
           <div>
-            asdfasdf
             <Button onClick={handleAdd}>Add</Button>
             <Table />
           </div>

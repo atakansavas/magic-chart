@@ -30,20 +30,11 @@ interface TableCellProps {
 
 export const TableCellStyle = styled.td<TableCellProps>`
   ${({ hasButton }) => css`
-    border: ${!hasButton &&
-    '1px solid ' +
-      ((props: { theme: { colors: { BLUE_100: any } } }) =>
-        props.theme.colors.BLUE_100)};
-    padding: ${!hasButton && '5px 10px'};
-    border-radius: 4px;
-    font-family: sans-serif;
+    border-radius: 2px;
     font-size: 14px;
 
     input {
-      border: 0;
-      padding: 0;
       width: 100%;
-      font-size: inherit;
     }
   `}
 `;
