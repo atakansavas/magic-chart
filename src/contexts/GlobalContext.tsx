@@ -13,7 +13,7 @@ export const GlobalContext = React.createContext<IGlobalContextProps>({
   entities: [],
   updateEntity: () => {},
   removeEntity: () => {},
-  addEntity: () => {},
+  addEntity: (entity: Entity) => {},
 });
 
 export const GlobalContextProvider = ({
@@ -27,11 +27,13 @@ export const GlobalContextProvider = ({
 
   //Use useCallback, add new entity to currentEntities
   const addEntity = (entity: Entity) => {
+    debugger;
     setCurrentEntities([...currentEntities, entity]);
   };
 
   //Use useCallback, update entity in currentEntities
   const updateEntity = (entity: Entity) => {
+    debugger;
     setCurrentEntities(
       currentEntities.map((currentEntity) =>
         currentEntity.id === entity.id ? entity : currentEntity
@@ -41,6 +43,7 @@ export const GlobalContextProvider = ({
 
   //Remove entity from currentEntities
   const removeEntity = (id: number) => {
+    debugger;
     setCurrentEntities(currentEntities.filter((entity) => entity.id !== id));
   };
 

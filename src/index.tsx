@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { GlobalContextProvider } from './contexts/GlobalContext';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyle from './styles/globalStyle';
 
@@ -9,8 +10,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <GlobalContextProvider>
+      <GlobalStyle />
+      <App />
+    </GlobalContextProvider>
   </React.StrictMode>
 );
 
