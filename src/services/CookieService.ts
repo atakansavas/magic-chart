@@ -6,7 +6,7 @@ class CookieService {
   //Save entity list to cookie
   static saveEntityList(entityList: Entity[]) {
     const entityListString = JSON.stringify(entityList);
-    window.localStorage.setItem(list_key, JSON.stringify(entityListString));
+    window.localStorage.setItem(list_key, entityListString);
   }
 
   //Get entity list from cookie
