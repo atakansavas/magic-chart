@@ -16,9 +16,9 @@ interface TableHeaderProps {
 }
 
 export const TableHeaderCellStyle = styled.th<TableHeaderProps>`
-  ${({ width, theme: { colors } }) => css`
-    background-color: ${colors.LIGHT_BLUE};
-    color: ${colors.WHITE};
+  ${({ width }) => css`
+    background-color: ${(props) => props.theme.colors.BLUE_100};
+    color: ${(props) => props.theme.colors.WHITE};
     width: ${width || '6rem'};
     border-radius: 4px;
   `}
@@ -29,12 +29,16 @@ interface TableCellProps {
 }
 
 export const TableCellStyle = styled.td<TableCellProps>`
-  ${({ hasButton, theme: { colors } }) => css`
-    border: ${!hasButton && '1px solid ' + colors.LIGHT_BLUE};
+  ${({ hasButton }) => css`
+    border: ${!hasButton &&
+    '1px solid ' +
+      ((props: { theme: { colors: { BLUE_100: any } } }) =>
+        props.theme.colors.BLUE_100)};
     padding: ${!hasButton && '5px 10px'};
     border-radius: 4px;
     font-family: sans-serif;
     font-size: 14px;
+
     input {
       border: 0;
       padding: 0;

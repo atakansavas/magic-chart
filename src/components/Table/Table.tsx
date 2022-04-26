@@ -12,8 +12,7 @@ function Table(props: ITableProps) {
     <TableStyle>
       <thead>
         <tr>
-          <TableHeaderCellStyle width='2rem'></TableHeaderCellStyle>
-          <TableHeaderCellStyle width='7rem'>Label</TableHeaderCellStyle>
+          <TableHeaderCellStyle width='15rem'>Label</TableHeaderCellStyle>
           <TableHeaderCellStyle>Vision</TableHeaderCellStyle>
           <TableHeaderCellStyle>Ability</TableHeaderCellStyle>
           <TableHeaderCellStyle>Delete</TableHeaderCellStyle>

@@ -11,8 +11,6 @@ interface ITableRowProps {
 const TableRow: React.FC<ITableRowProps> = ({ entity }) => {
   const { removeEntity, updateEntity } = useContext(GlobalContext);
 
-  //Use useCallback,
-
   const handleDelete = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     id: number

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Button from './components/Button';
 import Table from './components/Table';
-import { GlobalContext, GlobalContextProvider } from './contexts/GlobalContext';
+import { GlobalContext } from './contexts/GlobalContext';
 import { Main } from './styles/globalStyle';
 import { theme } from './styles/theme';
 
@@ -14,7 +14,7 @@ function App() {
   const handleAdd = () => {
     const newEntity = {
       id: Math.floor(Math.random() * 10000),
-      label: 'TEST',
+      label: 'New Entity',
       x: 0,
       y: 0,
     };
