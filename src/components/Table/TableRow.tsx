@@ -49,7 +49,7 @@ const TableRow: React.FC<ITableRowProps> = ({ entity }) => {
           type='number'
           max='100'
           min='0'
-          name='ability'
+          name='y'
           value={entity.y}
           onChange={handleChange}
         />
