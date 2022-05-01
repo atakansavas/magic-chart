@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import ButtonStyle from './button.styles';
 
 interface IButtonProps {
@@ -15,4 +14,4 @@ function Button(props: IButtonProps) {
   );
 }
 
-export default memo(Button);
+export default Button;

@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react';
+import { useContext } from 'react';
 import { GlobalContext } from '../../contexts/GlobalContext';
 import { TableHeaderCellStyle, TableStyle } from './table.styles';
 import TableRow from './TableRow';
@@ -27,4 +27,4 @@ function Table(props: ITableProps) {
   );
 }
 
-export default memo(Table);
+export default Table;
