@@ -31,9 +31,6 @@ export const GlobalContextProvider = ({
     if (currentEntities.length === 0) {
       const entities = CookieService.getEntityList();
       setCurrentEntities(entities);
-    } else {
-      console.log('UPDATE');
-      CookieService.saveEntityList(currentEntities);
     }
   }, [currentEntities, setCurrentEntities]);
 
@@ -47,21 +44,25 @@ export const GlobalContextProvider = ({
 
   //Use useCallback, add new entity to currentEntities
   const addEntity = (entity: Entity) => {
-    setCurrentEntities([...currentEntities, entity]);
+    const newList = [...currentEntities, entity];
+    setCurrentEntities(newList);
+    CookieService.saveEntityList(newList);
   };
 
   //Use useCallback, update entity in currentEntities
   const updateEntity = (entity: Entity) => {
-    setCurrentEntities(
-      currentEntities.map((currentEntity) =>
-        currentEntity.id === entity.id ? entity : currentEntity
-      )
+    const updatedList = currentEntities.map((e) =>
+      e.id === entity.id ? entity : e
     );
+    setCurrentEntities(updatedList);
+    CookieService.saveEntityList(updatedList);
   };
 
   //Remove entity from currentEntities
   const removeEntity = (id: number) => {
-    setCurrentEntities(currentEntities.filter((entity) => entity.id !== id));
+    const filteredList = currentEntities.filter((entity) => entity.id !== id);
+    setCurrentEntities(filteredList);
+    CookieService.saveEntityList(filteredList);
   };
 
   return (
